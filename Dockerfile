@@ -19,6 +19,7 @@ USER node-red
 COPY package.json /usr/src/node-red/
 RUN npm install node-gyp
 
+#Dependencias
 RUN npm install --save --production node-red-node-watson@0.5.23
 RUN npm install --save --production node-red-contrib-facebook-messenger-writer@0.0.3
 RUN npm install --save node-red-contrib-viseo-loop@0.2.0
@@ -33,6 +34,8 @@ RUN sudo apt-get update
 RUN sudo apt-get install git
 RUN git config --global user.name "Flows"
 RUN git config --global user.email "pedro@iris-bot.com.br"
+RUN git remote add origin https://github.com/pedro-pinho/interactive-city
+RUN git push --all --set-upstream origin 
 
 # User configuration directory volume
 VOLUME ["/data"]
