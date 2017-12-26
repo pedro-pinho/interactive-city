@@ -1,0 +1,17 @@
+{
+  "name": "iris-vocatio",
+  "version": "0.0.1",
+  "description": "Ambiente node.js no docker",
+  "author": "Pedro Pinho <pedro@iris-bot.com.br>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node-red -v $FLOWS"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "node-red": "0.x",
+    "node-red-node-watson":"0.x",
+    "node-red-admin": "0.x",
+    "node-red-node-openwhisk": "0.x"
+  }
+}
