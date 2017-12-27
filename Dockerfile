@@ -29,7 +29,7 @@ RUN apk update && apk add git
 ADD id_rsa /.ssh/id_rsa
 
 RUN git init \
-	&& git remote add origin https://x-access-token:fcd4fed85b8edbf5bf9ebc0e66a35398fa839233@github.com/pedro-pinho/interactive-city
+	&& git remote add origin https://pedro-pinho:pedroPINHO010@github.com/pedro-pinho/interactive-city
 
 RUN  git fetch && git checkout -f staging
 
