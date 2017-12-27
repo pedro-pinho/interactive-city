@@ -30,7 +30,7 @@ RUN apk add git
 ADD id_rsa /.ssh/id_rsa
 
 RUN git init
-RUN git remote add origin https://github.com/pedro-pinho/interactive-city
+RUN git remote add origin https://fcd4fed85b8edbf5bf9ebc0e66a35398fa839233:x-oauth-basic@github.com/pedro-pinho/interactive-city
 RUN git fetch
 RUN git checkout -f staging
 
