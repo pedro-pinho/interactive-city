@@ -20,28 +20,32 @@ COPY package.json /usr/src/node-red/
 RUN npm install node-gyp
 
 #Dependencias
-RUN npm install --save --production node-red-node-watson@0.5.23
-RUN npm install --save --production node-red-contrib-facebook-messenger-writer@0.0.3
-RUN npm install --save node-red-contrib-viseo-loop@0.2.0
-RUN npm install --save --production node-red-dashboard@2.6.1
-RUN npm install --save --production node-red-node-cf-cloudant@0.2.17
-RUN npm install --save --production node-red-node-twitter@0.1.12
-
 RUN npm install 
 
 # GIT
-RUN sudo apt-get update
-RUN sudo apt-get install git
+USER root
+RUN apk update
+RUN apk add git
+
+# Copy over private key, and set permissions
+ADD id_rsa /var/www/iris-vocatio/id_rsa
+
+RUN git init
 RUN git config --global user.name "Flows"
 RUN git config --global user.email "pedro@iris-bot.com.br"
 RUN git remote add origin https://github.com/pedro-pinho/interactive-city
-RUN git push --all --set-upstream origin 
+RUN git fetch
+RUN git show-ref
+RUN git checkout master
 
+RUN chown -R node-red:node-red /usr/src/node-red/.git
+
+USER node-red
 # User configuration directory volume
-VOLUME ["/data"]
+VOLUME ["/usr/src/node-red/"]
 EXPOSE 1880
 
 # Environment variable holding file path for flows configuration
 ENV FLOWS=flows.json
 
-CMD ["npm", "start", "--", "--userDir", "/data"]
+CMD ["npm", "start", "--", "--userDir", "/usr/src/node-red"]
