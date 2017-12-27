@@ -35,8 +35,7 @@ RUN git config --global user.name "Flows"
 RUN git config --global user.email "pedro@iris-bot.com.br"
 RUN git remote add origin https://github.com/pedro-pinho/interactive-city
 RUN git fetch
-RUN git show-ref
-RUN git checkout master
+RUN git checkout -f staging
 
 RUN chown -R node-red:node-red /usr/src/node-red/.git
 
