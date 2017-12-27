@@ -1,13 +1,8 @@
 {
-  "name": "iris-vocatio",
-  "version": "0.0.1",
-  "description": "Ambiente node.js no docker",
-  "author": "Pedro Pinho <pedro@iris-bot.com.br>",
-  "license": "ISC",
-  "main": "server.js",
-  "scripts": {
-    "start": "node-red -v $FLOWS"
-  },
+  "name": "node-red",
+  "version": "1.0.0",
+  "description": "This image contains everything needed for the project.",
+  "main": "settings.js",
   "dependencies": {
     "express": "^4.16.1",
     "node-red": "0.x",
@@ -21,10 +16,16 @@
     "node-red-contrib-git-ui ": "0.1.x",
     "google-cloud": "0.57.x"
   },
+  "scripts": {
+    "start": "node-red -v $FLOWS"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pedro-pinho/interactive-city.git"
+    "url": "git+https://pedro-pinho:pedroPINHO010@github.com/pedro-pinho/interactive-city.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/pedro-pinho/interactive-city/issues"
   },
