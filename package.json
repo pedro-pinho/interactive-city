@@ -18,7 +18,8 @@
     "node-red-node-cf-cloudant":"0.2.x",
     "node-red-node-twitter":"0.1.x",
     "node-red-node-openwhisk": "0.x",
-    "node-red-contrib-git-ui ": "0.1.x"
+    "node-red-contrib-git-ui ": "0.1.x",
+    "google-cloud": "0.57.x"
   },
   "repository": {
     "type": "git",
