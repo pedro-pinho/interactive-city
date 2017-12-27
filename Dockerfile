@@ -1,10 +1,10 @@
 FROM mhart/alpine-node:4
 
-# Home directory for Node-RED application source code.
+# Home directory for Node-RED
 RUN mkdir -p /usr/src/node-red
 
-# User data directory, contains flows, config and nodes.
-RUN mkdir /data
+# key directory
+RUN mkdir /.ssh
 
 WORKDIR /usr/src/node-red
 
@@ -28,7 +28,7 @@ RUN apk update
 RUN apk add git
 
 # Copy over private key, and set permissions
-ADD id_rsa /var/www/iris-vocatio/id_rsa
+ADD id_rsa /.ssh/id_rsa
 
 RUN git init
 RUN git config --global user.name "Flows"
@@ -40,6 +40,8 @@ RUN git checkout -f staging
 RUN chown -R node-red:node-red /usr/src/node-red/.git
 
 USER node-red
+# COPYING FLOWS
+COPY flows.json /usr/src/node-red/flows.json
 # User configuration directory volume
 VOLUME ["/usr/src/node-red/"]
 EXPOSE 1880
