@@ -10,7 +10,6 @@ WORKDIR /usr/src/node-red
 
 # Add node-red user so we aren't running as root.
 RUN adduser -h /usr/src/node-red -D -H node-red \
-    && chown -R node-red:node-red /data \
     && chown -R node-red:node-red /usr/src/node-red
 
 USER node-red
@@ -31,8 +30,6 @@ RUN apk add git
 ADD id_rsa /.ssh/id_rsa
 
 RUN git init
-RUN git config --global user.name "Flows"
-RUN git config --global user.email "pedro@iris-bot.com.br"
 RUN git remote add origin https://github.com/pedro-pinho/interactive-city
 RUN git fetch
 RUN git checkout -f staging
@@ -42,6 +39,10 @@ RUN chown -R node-red:node-red /usr/src/node-red/.git
 USER node-red
 # COPYING FLOWS
 COPY flows.json /usr/src/node-red/flows.json
+# Telling git who we are
+RUN git config --global user.name "Pedro"
+RUN git config --global user.email "pedro@iris-bot.com.br"
+
 # User configuration directory volume
 VOLUME ["/usr/src/node-red/"]
 EXPOSE 1880
