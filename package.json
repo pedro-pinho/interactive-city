@@ -9,7 +9,7 @@
     "node-red-node-watson":"0.5.x",
     "node-red-contrib-facebook-messenger-writer":"0.0.x",
     "node-red-contrib-viseo-loop":"0.2.x",
-    "node-red-dashboard":"2.6.x",
+    "node-red-dashboard":"2.19.x",
     "node-red-node-cf-cloudant":"0.2.x",
     "node-red-node-twitter":"0.1.x",
     "node-red-node-openwhisk": "0.x",
