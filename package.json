@@ -1,20 +1,19 @@
 {
-  "name": "node-red",
+  "name": "interactive-city",
   "version": "1.0.0",
   "description": "This image contains everything needed for the project.",
   "main": "settings.js",
   "dependencies": {
     "express": "^4.16.1",
-    "node-red": "0.x",
-    "node-red-node-watson":"0.5.x",
-    "node-red-contrib-facebook-messenger-writer":"0.0.x",
-    "node-red-contrib-viseo-loop":"0.2.x",
-    "node-red-dashboard":"2.19.x",
-    "node-red-node-cf-cloudant":"0.2.x",
-    "node-red-node-twitter":"0.1.x",
+    "node-red": "^2.2.2",
+    "node-red-contrib-facebook-messenger-writer": "0.0.x",
+    "node-red-contrib-git-ui": "0.1.x",
+    "node-red-contrib-viseo-loop": "0.2.x",
+    "node-red-dashboard": "2.19.x",
+    "node-red-node-cf-cloudant": "0.2.x",
     "node-red-node-openwhisk": "0.x",
-    "node-red-contrib-git-ui ": "0.1.x",
-    "google-cloud": "0.57.x"
+    "node-red-node-twitter": "0.1.x",
+    "node-red-node-watson": "0.5.x"
   },
   "scripts": {
     "start": "node-red -v $FLOWS"
