@@ -10,21 +10,21 @@
     "node-red-contrib-facebook-messenger-writer": "0.0.x",
     "node-red-contrib-git-ui": "0.1.x",
     "node-red-contrib-viseo-loop": "0.2.x",
-    "node-red-dashboard": "2.26.x",
+    "node-red-dashboard": "^3.1.6",
     "node-red-node-cf-cloudant": "0.2.x",
     "node-red-node-openwhisk": "0.x",
     "node-red-node-twitter": "0.1.x",
-    "node-red-node-watson": "0.5.x"
+    "node-red-node-watson": "^0.10.3"
   },
   "scripts": {
     "start": "node-red -v $FLOWS"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://pedro-pinho:pedroPINHO010@github.com/pedro-pinho/interactive-city.git"
+    "url": "git+https://github.com/pedro-pinho/interactive-city.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "pedrosantospinhodev@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pedro-pinho/interactive-city/issues"
