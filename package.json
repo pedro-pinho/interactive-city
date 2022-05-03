@@ -4,6 +4,7 @@
   "description": "This image contains everything needed for the project.",
   "main": "settings.js",
   "dependencies": {
+    "cryptiles": "^4.1.3",
     "express": "^4.16.1",
     "node-red": "^2.2.2",
     "node-red-contrib-facebook-messenger-writer": "0.0.x",
